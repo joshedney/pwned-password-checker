@@ -1,6 +1,6 @@
 import requests
 import hashlib
-import argparse
+import sys
 
 
 def check_password(password: bytes):
@@ -19,7 +19,10 @@ def check_password(password: bytes):
     return False
 
 
-password = input("Password: ")
+if sys.argv > 1:
+    password = sys.argv[1]
+else:
+    password = input("Password: ")
 
 if check_password(password.encode()):
     print("Your password has been found")
