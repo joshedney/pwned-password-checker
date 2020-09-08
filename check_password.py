@@ -19,7 +19,7 @@ def check_password(password: bytes):
     return False
 
 
-if sys.argv > 1:
+if len(sys.argv) > 1:
     password = sys.argv[1]
 else:
     password = input("Password: ")
